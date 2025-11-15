@@ -1,4 +1,4 @@
-.weather-details {
+.weather_details {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     padding: 2rem;
@@ -7,7 +7,7 @@
     margin: 0 auto;
 }
 
-.back-button {
+.back_button {
     background: #0984e3;
     color: white;
     border: none;
@@ -18,11 +18,11 @@
     margin-bottom: 2rem;
 }
 
-.back-button:hover {
+.back_button:hover {
     background: #74b9ff;
 }
 
-.weather-details h1 {
+.weather_details h1 {
     color: #2d3436;
     margin-bottom: 2rem;
     text-align: center;
@@ -30,24 +30,24 @@
     padding-bottom: 1rem;
 }
 
-.details-content {
+.details_content {
     margin-top: 2rem;
 }
 
-.hourly-details h2 {
+.hourly_details h2 {
     color: #2d3436;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
 
-.hourly-list {
+.hourly_list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-bottom: 2rem;
 }
 
-.hour-item {
+.hour_item {
     background: white;
     border: 2px solid #e9ecef;
     border-radius: 12px;
@@ -56,37 +56,37 @@
     transition: transform 0.2s, border-color 0.2s;
 }
 
-.hour-item:hover {
+.hour_item:hover {
     transform: translateY(-2px);
     border-color: #74b9ff;
 }
 
-.hour-time {
+.hour_time {
     font-weight: bold;
     color: #2d3436;
     font-size: 1.1em;
     margin-bottom: 0.5rem;
 }
 
-.hour-icon {
+.hour_icon {
     font-size: 2.5em;
     margin: 0.5rem 0;
 }
 
-.hour-temp {
+.hour_temp {
     font-size: 1.5em;
     font-weight: bold;
     color: #0984e3;
     margin: 0.5rem 0;
 }
 
-.hour-desc {
+.hour_desc {
     color: #666;
     margin-bottom: 0.5rem;
     font-size: 0.9em;
 }
 
-.hour-details {
+.hour_details {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
@@ -95,20 +95,20 @@
     margin-top: 0.5rem;
 }
 
-.day-summary {
+.day_summary {
     background: #f8f9fa;
     border-radius: 12px;
     padding: 1.5rem;
     margin-top: 2rem;
 }
 
-.day-summary h2 {
+.day_summary h2 {
     color: #2d3436;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
 
-.summary-stats {
+.summary_stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
@@ -122,29 +122,29 @@
     border-bottom: 1px solid #e9ecef;
 }
 
-.stat-label {
+.stat_label {
     font-weight: bold;
     color: #2d3436;
 }
 
-.stat-value {
+.stat_value {
     color: #0984e3;
     font-weight: 500;
 }
 
-.loading, .no-data {
+.loading, .no_data {
     text-align: center;
     padding: 3rem;
     color: #666;
     font-size: 1.1em;
 }
 
-.no-data h3 {
+.no_data h3 {
     color: #d63031;
     margin-bottom: 1rem;
 }
 
-.home-button {
+.home_button {
     background: #0984e3;
     color: white;
     border: none;
@@ -155,7 +155,4 @@
     margin-top: 1rem;
 }
 
-.home-button:hover {
-    background: #74b9ff;
-}
 

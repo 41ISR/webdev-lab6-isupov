@@ -1,9 +1,9 @@
-.search-page {
+.search_page {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.search-page__title {
+.search_title {
     text-align: center;
     color: white;
     margin-bottom: 2rem;
@@ -11,7 +11,7 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.weather-section {
+.weather_section {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     padding: 2rem;
@@ -19,7 +19,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.weather-section h2 {
+.weather_section h2 {
     color: #2d3436;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
@@ -27,18 +27,18 @@
     padding-bottom: 0.5rem;
 }
 
-.weather-feed {
+.weather_feed {
     display: flex;
     gap: 1rem;
     overflow-x: auto;
     padding: 1rem 0;
 }
 
-.hourly-feed {
+.hourly_feed {
     min-height: 180px;
 }
 
-.daily-feed {
+.daily_feed {
     min-height: 160px;
 }
 
@@ -58,11 +58,6 @@
     margin: 0 auto 1rem;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 .error {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
@@ -76,18 +71,4 @@
     margin-bottom: 1rem;
 }
 
-.retry-btn {
-    background: #0984e3;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem;
-    transition: background 0.2s;
-}
 
-.retry-btn:hover {
-    background: #74b9ff;
-}

@@ -29,7 +29,9 @@ const WeatherDetails = () => {
                 
             } catch (error) {
                 console.error(error)
-            } 
+            } finally {
+                setLoading(false) 
+            }
         }
 
         fetchWeatherData()
@@ -68,12 +70,12 @@ const WeatherDetails = () => {
         const weatherIcons = {
             1: "☀️", 2: "⛅", 3: "⛅", 4: "☁️", 5: "🌫️", 6: "🌫️",
             7: "🌧️", 8: "🌧️", 9: "🌧️", 10: "⛈️", 11: "⛈️", 12: "⛈️",
-            13: "🌨️", 14: "🌨️", 15: "🌨️", 16: "🌨️", 17: "🌧️", 18: "🌧️",
-            19: "🌨️", 20: "🌨️", 21: "⛈️", 22: "🌨️", 23: "🌨️", 24: "🌨️",
-            25: "🌨️", 26: "🌨️", 27: "🌨️", 28: "🌨️", 29: "🌨️", 30: "🌨️",
-            31: "🌨️", 32: "🌧️", 33: "🌧️", 34: "🌧️"
+            13: "❄️", 14: "❄️", 15: "❄️", 16: "❄️", 17: "🌧️", 18: "🌧️",
+            19: "❄️", 20: "❄️", 21: "⛈️", 22: "❄️", 23: "❄️", 24: "❄️",
+            25: "❄️", 26: "❄️", 27: "❄️", 28: "❄️", 29: "❄️", 30: "❄️",
+            31: "❄️", 32: "🌧️", 33: "🌧️", 34: "🌧️"
         }
-        return weatherIcons[code] || "🌈"
+        return weatherIcons[code] 
     }
 
     const getWeatherDescription = (code) => {
@@ -86,7 +88,7 @@ const WeatherDetails = () => {
             26: "Снег", 27: "Снег", 28: "Снег", 29: "Снег", 30: "Снег", 31: "Снег",
             32: "Дождь", 33: "Дождь", 34: "Дождь"
         }
-        return descriptions[code] || "Неизвестно"
+        return descriptions[code] 
     }
 
     const formatDate = (dateString) => {
@@ -108,27 +110,27 @@ const WeatherDetails = () => {
     }
 
     return (
-        <div className="weather-details">
-            <button onClick={() => navigate(-1)} className="back-button">
+        <div className="weather_details">
+            <button onClick={() => navigate(-1)} className="back_button">
                 ← Назад
             </button>
             
             <h1>Детали погоды на {formatDate(date)}</h1>
             
             {hourlyDetails.length > 0 ? (
-                <div className="details-content">
-                    <div className="hourly-details">
+                <div className="details_content">
+                    <div className="hourly_details">
                         <h2>Почасовой прогноз</h2>
-                        <div className="hourly-list">
+                        <div className="hourly_list">
                             {hourlyDetails.map((hour, index) => (
-                                <div key={index} className="hour-item">
-                                    <div className="hour-time">{hour.time}</div>
-                                    <div className="hour-icon">
+                                <div key={index} className="hour_item">
+                                    <div className="hour_time">{hour.time}</div>
+                                    <div className="hour_icon">
                                         {getWeatherIcon(hour.weatherCode)}
                                     </div>
-                                    <div className="hour-temp">{Math.round(hour.temperature)}°C</div>
-                                    <div className="hour-desc">{getWeatherDescription(hour.weatherCode)}</div>
-                                    <div className="hour-details">
+                                    <div className="hour_temp">{Math.round(hour.temperature)}°C</div>
+                                    <div className="hour_desc">{getWeatherDescription(hour.weatherCode)}</div>
+                                    <div className="hour_details">
                                         <span>💨 {Math.round(hour.windspeed)} м/с</span>
                                         <span>💧 {hour.precipitation} мм</span>
                                         <span>💦 {hour.humidity}%</span>
@@ -139,26 +141,25 @@ const WeatherDetails = () => {
                         </div>
                     </div>
                     
-                    
-                    <div className="day-summary">
+                    <div className="day_summary">
                         <h2>Сводка за день</h2>
-                        <div className="summary-stats">
+                        <div className="summary_stats">
                             <div className="stat">
-                                <span className="stat-label">Температура:</span>
-                                <span className="stat-value">
-                                    мин {Math.min(...hourlyDetails.map(h => h.temperature))}°C / 
-                                    макс {Math.max(...hourlyDetails.map(h => h.temperature))}°C
+                                <span className="stat_label">Температура:</span>
+                                <span className="stat_value">
+                                    мин {Math.round(Math.min(...hourlyDetails.map(h => h.temperature)))}°C / 
+                                    макс {Math.round(Math.max(...hourlyDetails.map(h => h.temperature)))}°C
                                 </span>
                             </div>
                             <div className="stat">
-                                <span className="stat-label">Осадки:</span>
-                                <span className="stat-value">
-                                    {hourlyDetails.reduce((sum, h) => sum + h.precipitation, 0)} мм
+                                <span className="stat_label">Осадки:</span>
+                                <span className="stat_value">
+                                    {hourlyDetails.reduce((sum, h) => sum + h.precipitation, 0).toFixed(1)} мм
                                 </span>
                             </div>
                             <div className="stat">
-                                <span className="stat-label">Влажность:</span>
-                                <span className="stat-value">
+                                <span className="stat_label">Влажность:</span>
+                                <span className="stat_value">
                                     в среднем {Math.round(hourlyDetails.reduce((sum, h) => sum + h.humidity, 0) / hourlyDetails.length)}%
                                 </span>
                             </div>
@@ -166,11 +167,11 @@ const WeatherDetails = () => {
                     </div>
                 </div>
             ) : (
-                <div className="no-data">
+                <div className="no_data">
                     <h3>Нет данных о погоде для выбранной даты</h3>
                     <p>Выбранная дата: {date}</p>
                     <p>Попробуйте выбрать другую дату из списка на главной странице.</p>
-                    <button onClick={() => navigate('/')} className="home-button">
+                    <button onClick={() => navigate('/')} className="home_button">
                         Вернуться на главную
                     </button>
                 </div>

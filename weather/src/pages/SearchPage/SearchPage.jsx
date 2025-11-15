@@ -28,13 +28,15 @@ const SearchPage = () => {
                 setError(undefined)
 
             } catch (error) {
+                setError(error.message)
                 console.error(error)
+            } finally {
+                setLoading(false) 
             }
         }
 
         fetchWeatherData()
     }, [])
-
 
     const getHourlyWeatherCards = () => {
         if (!weatherData || !weatherData.data_1h) {return []}
@@ -43,7 +45,6 @@ const SearchPage = () => {
         const cards = []
 
         if (!hourlyData.time || !hourlyData.temperature) {
-            console.log('Отсутствуют необходимые поля в hourly данных')
             return []
         }
 
@@ -77,7 +78,6 @@ const SearchPage = () => {
         const cards = []
 
         if (!dailyData.time || !dailyData.temperature_mean) {
-            
             return []
         }
 
@@ -105,8 +105,8 @@ const SearchPage = () => {
     const dailyCards = getDailyWeatherCards()
 
     return (
-        <div className="search-page">
-            <h1 className="search-page__title">Погода в Омске</h1>
+        <div className="search_page">
+            <h1 className="search_title">Погода в Омске</h1>
 
             {loading && (
                 <div className="loading">
@@ -115,22 +115,13 @@ const SearchPage = () => {
                 </div>
             )}
 
-            {error && (
-                <div className="error">
-                    <h3>Ошибка</h3>
-                    <p>{error}</p>
-                    <button onClick={() => window.location.reload()} className="retry-btn">
-                        Попробовать снова
-                    </button>
-                </div>
-            )}
 
             {weatherData && !loading && !error && (
                 <>
-                    <section className="weather-section">
+                    <section className="weather_section">
                         <h2>Погода на сегодня</h2>
                         {hourlyCards.length > 0 ? (
-                            <div className="weather-feed hourly-feed">
+                            <div className="weather_feed hourly_feed">
                                 {hourlyCards.map(weather => (
                                     <WeatherCard
                                         key={weather.key}
@@ -142,19 +133,16 @@ const SearchPage = () => {
                                 ))}
                             </div>
                         ) : (
-                            <div className="no-data">
+                            <div className="no_data">
                                 <p>Нет данных о почасовой погоде</p>
-                                <p style={{ fontSize: '0.9em', color: '#666' }}>
-                                    Проверьте структуру данных в консоли
-                                </p>
                             </div>
                         )}
                     </section>
 
-                    <section className="weather-section">
+                    <section className="weather_section">
                         <h2>Прогноз на неделю</h2>
                         {dailyCards.length > 0 ? (
-                            <div className="weather-feed daily-feed">
+                            <div className="weather_feed daily_feed">
                                 {dailyCards.map(weather => (
                                     <WeatherCard
                                         key={weather.key}
@@ -165,7 +153,7 @@ const SearchPage = () => {
                                 ))}
                             </div>
                         ) : (
-                            <div className="no-data">
+                            <div className="no_data">
                                 <p>Нет данных о дневной погоде</p>
                             </div>
                         )}
