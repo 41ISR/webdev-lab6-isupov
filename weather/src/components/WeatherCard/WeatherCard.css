@@ -1,0 +1,40 @@
+.weather-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    min-width: 120px;
+
+}
+
+.weather_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.9em;
+}
+
+.weather_date {
+    font-weight: bold;
+    color: #333;
+}
+
+.weather_time {
+    color: #666;
+    font-size: 0.8em;
+}
+
+.weather_icon {
+    font-size: 2.5em;
+    margin: 8px 0;
+}
+
+.weather_temperature {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c5aa0;
+}
