@@ -1,0 +1,161 @@
+.weather-details {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.back-button {
+    background: #0984e3;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    background: #74b9ff;
+}
+
+.weather-details h1 {
+    color: #2d3436;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #74b9ff;
+    padding-bottom: 1rem;
+}
+
+.details-content {
+    margin-top: 2rem;
+}
+
+.hourly-details h2 {
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.hourly-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hour-item {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.hour-item:hover {
+    transform: translateY(-2px);
+    border-color: #74b9ff;
+}
+
+.hour-time {
+    font-weight: bold;
+    color: #2d3436;
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+}
+
+.hour-icon {
+    font-size: 2.5em;
+    margin: 0.5rem 0;
+}
+
+.hour-temp {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0984e3;
+    margin: 0.5rem 0;
+}
+
+.hour-desc {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.9em;
+}
+
+.hour-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.day-summary {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.day-summary h2 {
+    color: #2d3436;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.stat-label {
+    font-weight: bold;
+    color: #2d3436;
+}
+
+.stat-value {
+    color: #0984e3;
+    font-weight: 500;
+}
+
+.loading, .no-data {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.no-data h3 {
+    color: #d63031;
+    margin-bottom: 1rem;
+}
+
+.home-button {
+    background: #0984e3;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.home-button:hover {
+    background: #74b9ff;
+}
+
